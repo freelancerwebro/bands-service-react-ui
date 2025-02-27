@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  frontend:
+    container_name: bands-service-react-ui
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    working_dir: /app
+    volumes:
+      - .:/app
+    ports:
+      - "3010:3000"
