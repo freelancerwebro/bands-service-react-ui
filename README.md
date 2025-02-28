@@ -18,10 +18,10 @@ git clone git@github.com:freelancerwebro/bands-service-react-ui.git
 
 🔹 Run the following command to build the service:
 ```
-docker-compose up -d --build
+./deploy.sh
 ```
 
 ## ✅ Running Tests
 ```
-npm test
+npm test a
 ```
