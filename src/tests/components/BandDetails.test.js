@@ -8,7 +8,7 @@ jest.mock("../../api", () => ({
 }));
 jest.setTimeout(50000);
 
-test("displays band details", async () => {
+test("renders the band details", async () => {
     getBand.mockResolvedValue({
         id: 1,
         name: "Pink Floyd",
