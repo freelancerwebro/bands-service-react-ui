@@ -35,7 +35,7 @@ function App() {
 
   return (
       <div>
-        <h1>🎵 Bands Management</h1>asd
+        <h1>🎵 Bands Management</h1>
           {selectedBandId && (
               <BandDetails band={selectedBand} onClose={() => setSelectedBandId(null)} />
           )}
