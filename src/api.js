@@ -4,3 +4,8 @@ export async function getBands() {
     const response = await fetch(`${API_URL}/band`);
     return response.json();
 }
+
+export async function getBand(id) {
+    const response = await fetch(`${API_URL}/band/${id}`);
+    return response.json();
+}

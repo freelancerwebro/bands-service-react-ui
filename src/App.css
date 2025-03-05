@@ -36,3 +36,28 @@
     transform: rotate(360deg);
   }
 }
+
+.band-details {
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin-top: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.band-details h2 {
+  color: #333;
+}
+
+.band-details .error {
+  color: red;
+}
+
+.band-details button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  float: right;
+}
