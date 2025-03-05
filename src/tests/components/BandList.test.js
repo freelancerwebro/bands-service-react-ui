@@ -1,4 +1,4 @@
-import {render, screen} from "@testing-library/react";
+import {fireEvent, render, screen, within} from "@testing-library/react";
 import BandList from "./../../components/BandList";
 import { getBands } from "../../api";
 import expect from "expect";

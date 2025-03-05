@@ -9,3 +9,7 @@ export async function getBand(id) {
     const response = await fetch(`${API_URL}/band/${id}`);
     return response.json();
 }
+
+export async function deleteBand(id) {
+    await fetch(`${API_URL}/band/${id}`, { method: "DELETE" });
+}

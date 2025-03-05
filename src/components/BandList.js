@@ -1,4 +1,4 @@
-function BandList({ bands, onSelect }) {
+function BandList({ bands, onSelect, onDelete }) {
     return (
         <div>
             <h2>🎸 Band List </h2>
@@ -28,13 +28,12 @@ function BandList({ bands, onSelect }) {
                             <td>{band.founders}</td>
                             <td>
                                 <button onClick={() => {
-                                    console.log("View clicked:", band.id);
                                     onSelect(band.id);
                                 }}>
                                     View
                                 </button>&nbsp;&nbsp;
                                 <button onClick={() => {
-                                    console.log("Delete clicked:", band.id);
+                                    onDelete(band.id);
                                 }}>
                                     Delete
                                 </button>
