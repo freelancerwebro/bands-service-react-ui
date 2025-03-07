@@ -12,9 +12,7 @@ function App() {
     const [view, setView] = useState("list"); // "details", "edit", "list", "add"
 
     useEffect(() => {
-        getBands().then(setBands).catch(() => {
-            setBands([]);
-        });
+        fetchBands();
     }, []);
 
     useEffect(() => {
@@ -29,7 +27,13 @@ function App() {
             });
     }, [selectedBandId]);
 
-    const handleDelete = async (id) => {
+    const fetchBands = async () => {
+        getBands().then(setBands).catch(() => {
+            setBands([]);
+        });
+    }
+
+    const handleOnDelete = async (id) => {
         if(confirm("Are you sure you want to delete this band?") === false) return;
 
         await deleteBand(id);
@@ -37,31 +41,30 @@ function App() {
         setView("list");
     };
 
-    const handleEdit = (id) => {
-        console.log("handleEdit triggered", id);
-        console.log("selectedBand = ", selectedBand);
-
+    const openEditForm = (id) => {
         setView("edit");
         setSelectedBandId(id);
     }
 
-    const handleView = (id) => {
-        console.log("handleView triggered", id);
+    const openViewDetails = (id) => {
         setView("details");
         setSelectedBandId(id);
     }
 
-    const handleCreate = () => {
-        console.log("handleCreate triggered");
+    const openCreateForm = () => {
         setView("add");
     }
 
     const handleClose = () => {
-        console.log("handleClose triggered");
-
         setSelectedBandId(null);
         setSelectedBand(null);
         setView("list");
+    }
+
+    const handleOnSaveSubmit = () => {
+        handleClose();
+
+        fetchBands();
     }
 
   return (
@@ -69,34 +72,22 @@ function App() {
         <h1>🎵 Bands Management</h1>
 
           {view === "list" &&
-              <button className="create-band" onClick={handleCreate}>Create new band</button>
+              <button className="create-band" onClick={openCreateForm}>Create new band</button>
           }
 
           {view === "details" && selectedBandId && (
-              <BandDetails band={selectedBand} onEdit={() => { handleEdit(selectedBandId) }} onClose={handleClose} />
+              <BandDetails band={selectedBand} onEdit={() => { openEditForm(selectedBandId) }} onClose={handleClose} />
           )}
 
           {view === "edit" && selectedBandId && (
-            <BandForm band={selectedBand} onSave={() => {
-                console.log('Edit onSave triggered', selectedBandId);
-
-                setSelectedBandId(null);
-                setSelectedBand(null);
-                setView("list");
-            }} onClose={handleClose}/>
+            <BandForm band={selectedBand} onSave={() => {handleOnSaveSubmit()}} onClose={handleClose}/>
           )}
 
           {view === "add" && (
-              <BandForm onSave={() => {
-                  console.log('Add onSave triggered');
-
-                  setSelectedBandId(null);
-                  setSelectedBand(null);
-                  setView("list");
-              }} onClose={handleClose}/>
+              <BandForm onSave={() => {handleOnSaveSubmit()}} onClose={handleClose}/>
           )}
 
-          <BandList onView={handleView} bands={bands} onDelete={handleDelete} onEdit={handleEdit}/>
+          <BandList onView={openViewDetails} bands={bands} onDelete={handleOnDelete} onEdit={openEditForm}/>
       </div>
   );
 }
