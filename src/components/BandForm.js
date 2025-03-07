@@ -37,29 +37,45 @@ function BandForm({ band, onSave, onClose }) {
         <div className="band-details">
             <form onSubmit={handleSubmit}>
                 <h2>{band ? "Edit Band" : "Add Band"}</h2>
-                <label>Name:</label>
-                <input type="text" name="name" value={formData.name || ""} onChange={handleChange} required /> <br/>
+                <label>
+                    Name:
+                    <input type="text" name="name" value={formData.name || ""} onChange={handleChange} required /> <br/>
+                </label>
 
-                <label>Origin:</label>
-                <input type="text" name="origin" value={formData.origin || ""} onChange={handleChange} required /> <br/>
+                <label>
+                    Origin:
+                    <input type="text" name="origin" value={formData.origin || ""} onChange={handleChange} required /> <br/>
+                </label>
 
-                <label>City:</label>
-                <input type="text" name="city" value={formData.city || ""} onChange={handleChange} required /> <br/>
+                <label>
+                    City:
+                    <input type="text" name="city" value={formData.city || ""} onChange={handleChange} required /> <br/>
+                </label>
 
-                <label>Start year:</label>
-                <input type="number" name="startYear" value={formData.startYear || ""} onChange={handleChange} required /> <br/>
+                <label>
+                    Start year:
+                    <input type="number" name="startYear" value={formData.startYear || ""} onChange={handleChange} required /> <br/>
+                </label>
 
-                <label>Separation year:</label>
-                <input type="number" name="separationYear" value={formData.separationYear || ""} onChange={handleChange} /> <br/>
+                <label>
+                    Separation year:
+                    <input type="number" name="separationYear" value={formData.separationYear || ""} onChange={handleChange} /> <br/>
+                </label>
 
-                <label>Members:</label>
-                <input type="number" name="members" value={formData.members || ""} onChange={handleChange} /> <br/>
+                <label>
+                    Members:
+                    <input type="number" name="members" value={formData.members || ""} onChange={handleChange} /> <br/>
+                </label>
 
-                <label>Musical current:</label>
-                <input type="text" name="musicalCurrent" value={formData.musicalCurrent || ""} onChange={handleChange} required /> <br/>
+                <label>
+                    Musical current:
+                    <input type="text" name="musicalCurrent" value={formData.musicalCurrent || ""} onChange={handleChange} /> <br/>
+                </label>
 
-                <label>Presentation:</label>
-                <textarea name="presentation" value={formData.presentation || ""} onChange={handleChange} required /> <br/>
+                <label>
+                    Presentation:
+                    <textarea name="presentation" value={formData.presentation || ""} onChange={handleChange} /> <br/>
+                </label>
 
                 <button onClick={onClose}>Close</button> &nbsp;&nbsp;
                 <button type="submit" className="band-edit">{band ? "Update Band" : "Create Band"}</button>

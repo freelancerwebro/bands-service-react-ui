@@ -27,7 +27,7 @@ function App() {
             });
     }, [selectedBandId]);
 
-    const fetchBands = async () => {
+    const fetchBands = () => {
         getBands().then(setBands).catch(() => {
             setBands([]);
         });

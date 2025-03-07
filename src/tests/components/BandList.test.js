@@ -1,4 +1,4 @@
-import {fireEvent, render, screen, within} from "@testing-library/react";
+import {render, screen} from "@testing-library/react";
 import BandList from "./../../components/BandList";
 import { getBands } from "../../api";
 import expect from "expect";
@@ -16,9 +16,18 @@ test("renders the list of bands", async () => {
 
     render(<BandList bands={await getBands()} onSelect={() => {}} />);
 
-    expect(screen.getByText(/band list/i)).toBeInTheDocument();
+    expect(screen.getByText(/band list/i)).toBeInTheDocument()
     expect(screen.getByText("The Beatles")).toBeInTheDocument()
     expect(screen.getByText("Queen")).toBeInTheDocument()
     expect(screen.getByText("Liverpool")).toBeInTheDocument()
     expect(screen.getByText("New York")).toBeInTheDocument()
+});
+
+test("renders an empty list of bands", async () => {
+    getBands.mockResolvedValue([]);
+
+    render(<BandList bands={await getBands()} onSelect={() => {}} />);
+
+    expect(screen.getByText(/band list/i)).toBeInTheDocument();
+    expect(screen.getByText("No bands available.")).toBeInTheDocument()
 });
