@@ -1,4 +1,4 @@
-function BandList({ bands, onSelect, onDelete }) {
+function BandList({ bands, onView, onDelete, onEdit }) {
     return (
         <div>
             <h2>🎸 Band List </h2>
@@ -11,9 +11,6 @@ function BandList({ bands, onSelect, onDelete }) {
                         <th>Name</th>
                         <th>Origin</th>
                         <th>City</th>
-                        <th>Start year</th>
-                        <th>Separation year</th>
-                        <th>Founders</th>
                         <th>&nbsp;</th>
                     </tr>
                     </thead>
@@ -23,14 +20,16 @@ function BandList({ bands, onSelect, onDelete }) {
                             <td>{band.name}</td>
                             <td>{band.origin}</td>
                             <td>{band.city}</td>
-                            <td>{band.startYear}</td>
-                            <td>{band.separationYear}</td>
-                            <td>{band.founders}</td>
                             <td>
                                 <button onClick={() => {
-                                    onSelect(band.id);
+                                    onView(band.id);
                                 }}>
                                     View
+                                </button>&nbsp;&nbsp;
+                                <button onClick={() => {
+                                    onEdit(band.id);
+                                }}>
+                                    Edit
                                 </button>&nbsp;&nbsp;
                                 <button onClick={() => {
                                     onDelete(band.id);

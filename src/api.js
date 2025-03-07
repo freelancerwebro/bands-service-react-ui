@@ -13,3 +13,21 @@ export async function getBand(id) {
 export async function deleteBand(id) {
     await fetch(`${API_URL}/band/${id}`, { method: "DELETE" });
 }
+
+export async function createBand(band) {
+    const response = await fetch(`${API_URL}/band`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(band),
+    });
+    return response.json();
+}
+
+export async function updateBand(id, band) {
+    const response = await fetch(`${API_URL}/band/${id}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(band),
+    });
+    return response.json();
+}

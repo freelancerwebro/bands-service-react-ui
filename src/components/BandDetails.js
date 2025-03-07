@@ -1,4 +1,4 @@
-function BandDetails({ band, onClose }) {
+function BandDetails({ band, onClose, onEdit }) {
 
     if (!band) {
         return null;
@@ -18,7 +18,8 @@ function BandDetails({ band, onClose }) {
                     <p>Musical current: {band.musicalCurrent}</p>
                     <p>Presentation: {band.presentation}</p>
 
-                    <button onClick={onClose}>Close</button>
+                    <button className="band-close" onClick={onClose}>Close</button>&nbsp;&nbsp;
+                    <button className="band-edit" onClick={onEdit}>Edit</button>
                 </div>
             ) : (
                 <p>Loading...</p>
