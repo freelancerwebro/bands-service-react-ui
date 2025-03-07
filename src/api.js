@@ -31,3 +31,13 @@ export async function updateBand(id, band) {
     });
     return response.json();
 }
+
+export async function uploadFile(file) {
+    const formData = new FormData();
+    formData.append("file", file);
+    const response = await fetch(`${API_URL}/import`, {
+        method: "POST",
+        body: formData,
+    });
+    return response.json();
+}

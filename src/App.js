@@ -4,6 +4,7 @@ import BandList from "./components/BandList";
 import BandDetails from "./components/BandDetails";
 import BandForm from "./components/BandForm";
 import './App.css';
+import UploadFileForm from "./components/UploadFileForm";
 
 function App() {
     const [bands, setBands] = useState([]);
@@ -55,6 +56,10 @@ function App() {
         setView("add");
     }
 
+    const openUploadCsvForm = () => {
+        setView("upload");
+    }
+
     const handleClose = () => {
         setSelectedBandId(null);
         setSelectedBand(null);
@@ -63,7 +68,6 @@ function App() {
 
     const handleOnSaveSubmit = () => {
         handleClose();
-
         fetchBands();
     }
 
@@ -71,9 +75,12 @@ function App() {
       <div>
         <h1>🎵 Bands Management</h1>
 
-          {view === "list" &&
-              <button className="create-band" onClick={openCreateForm}>Create new band</button>
-          }
+          {view === "list" && (
+              <div>
+                  <button className="create-band" onClick={openCreateForm}>Create new band</button>&nbsp;&nbsp;
+                  <button className="upload-csv" onClick={openUploadCsvForm}>Upload CSV</button>
+              </div>
+          )}
 
           {view === "details" && selectedBandId && (
               <BandDetails band={selectedBand} onEdit={() => { openEditForm(selectedBandId) }} onClose={handleClose} />
@@ -85,6 +92,10 @@ function App() {
 
           {view === "add" && (
               <BandForm onSave={() => {handleOnSaveSubmit()}} onClose={handleClose}/>
+          )}
+
+          {view === "upload" && (
+              <UploadFileForm onClose={handleClose} onUpload={() => {handleClose()}}/>
           )}
 
           <BandList onView={openViewDetails} bands={bands} onDelete={handleOnDelete} onEdit={openEditForm}/>
