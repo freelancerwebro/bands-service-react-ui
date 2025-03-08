@@ -12,6 +12,7 @@ This UI interacts with the **[Bands Service API](https://github.com/freelancerwe
 ## 🔧 Tech Stack
 
 - React 19
+- Tailwind CSS
 - Docker
 - Jest
 
@@ -42,3 +43,17 @@ The app will be available at http://localhost:3010.
 ```
 npm test a
 ```
+
+## Preview
+
+#### Band list
+![app preview](https://raw.githubusercontent.com/freelancerwebro/bands-service-react-ui/blob/main/public/images/list.png)
+
+#### Import bands
+![app preview](https://raw.githubusercontent.com/freelancerwebro/bands-service-react-ui/blob/main/public/images/import.png)
+
+#### Add band
+![app preview](https://raw.githubusercontent.com/freelancerwebro/bands-service-react-ui/blob/main/public/images/add.png)
+
+#### Band details
+![app preview](https://raw.githubusercontent.com/freelancerwebro/bands-service-react-ui/blob/main/public/images/details.png)
