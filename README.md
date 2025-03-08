@@ -47,13 +47,13 @@ npm test a
 ## Preview
 
 #### Band list
-![app preview](https://raw.githubusercontent.com/freelancerwebro/bands-service-react-ui/blob/main/public/images/list.png)
+![app preview](https://raw.githubusercontent.com/freelancerwebro/bands-service-react-ui/refs/heads/main/public/images/list.png)
 
 #### Import bands
-![app preview](https://raw.githubusercontent.com/freelancerwebro/bands-service-react-ui/blob/main/public/images/import.png)
+![app preview](https://raw.githubusercontent.com/freelancerwebro/bands-service-react-ui/refs/heads/main/public/images/import.png)
 
 #### Add band
-![app preview](https://raw.githubusercontent.com/freelancerwebro/bands-service-react-ui/blob/main/public/images/add.png)
+![app preview](https://raw.githubusercontent.com/freelancerwebro/bands-service-react-ui/refs/heads/main/public/images/add.png)
 
 #### Band details
-![app preview](https://raw.githubusercontent.com/freelancerwebro/bands-service-react-ui/blob/main/public/images/details.png)
+![app preview](https://raw.githubusercontent.com/freelancerwebro/bands-service-react-ui/refs/heads/main/public/images/details.png)
