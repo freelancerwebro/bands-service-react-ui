@@ -1,7 +1,5 @@
 # 🎵 Bands Service - React UI
 
-## 📝 Project Overview
-
 Bands Service - React UI is a frontend application built with React to manage bands, allowing users to:
 
 - View a list of bands
