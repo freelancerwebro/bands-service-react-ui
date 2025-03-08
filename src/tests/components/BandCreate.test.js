@@ -27,7 +27,7 @@ test('creates a new band', async () => {
 
   render(<App />)
 
-  fireEvent.click(screen.getByText('Create new band'))
+  fireEvent.click(screen.getByText('Create New Band'))
 
   await waitFor(() => expect(screen.getByText('Add Band')).toBeInTheDocument())
 
