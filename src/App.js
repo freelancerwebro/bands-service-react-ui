@@ -75,16 +75,23 @@ function App() {
   }
 
   return (
-    <div>
-      <h1>🎵 Bands Management</h1>
+    <div className="flex flex-col items-center justify-start min-h-screen text-center pt-10">
+      <h1 className="text-3xl font-bold text-gray-900 mb-6 flex items-center">
+        🎵 Bands Management
+      </h1>
 
       {view === 'list' && (
-        <div>
-          <button className="create-band" onClick={openCreateForm}>
-            Create new band
+        <div className="flex space-x-4">
+          <button
+            className="bg-blue-600 text-white px-4 py-2 rounded-md font-semibold hover:bg-blue-700 transition-all"
+            onClick={openCreateForm}
+          >
+            Create New Band
           </button>
-          &nbsp;&nbsp;
-          <button className="upload-csv" onClick={openUploadCsvForm}>
+          <button
+            className="bg-green-600 text-white px-4 py-2 rounded-md font-semibold hover:bg-green-700 transition-all"
+            onClick={openUploadCsvForm}
+          >
             Upload CSV
           </button>
         </div>
