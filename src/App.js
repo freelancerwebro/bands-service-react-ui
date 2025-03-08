@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useState } from 'react'
 import { getBand, getBands, deleteBand } from './api'
 import BandList from './components/BandList'
 import BandDetails from './components/BandDetails'
