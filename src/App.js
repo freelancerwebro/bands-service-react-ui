@@ -37,6 +37,7 @@ function App() {
   }
 
   const handleOnDelete = async (id) => {
+    // eslint-disable-next-line no-restricted-globals
     if (confirm('Are you sure you want to delete this band?') === false) return
 
     await deleteBand(id)
