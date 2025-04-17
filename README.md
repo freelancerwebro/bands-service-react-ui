@@ -11,7 +11,7 @@ This UI interacts with the **[Bands Service API](https://github.com/freelancerwe
 
 ## Tech Stack
 
-- React 19
+- React 20
 - Tailwind CSS
 - Docker
 - Jest
